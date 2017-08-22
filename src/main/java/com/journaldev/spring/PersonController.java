@@ -25,7 +25,6 @@ public class PersonController {
 	
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public String listPersons(Model model) {
-		System.out.println("from PersonController listPersons()");
 		model.addAttribute("person", new Person());
 		model.addAttribute("listPersons", this.personService.listPersons());
 		return "person";
@@ -34,7 +33,6 @@ public class PersonController {
 	//For add and update person both
 	@RequestMapping(value= "/person/add", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute("person") Person p){
-		System.out.println("from PersonController addPerson");
 		if(p.getId() == 0){
 			//new person, add it
 			this.personService.addPerson(p);
@@ -49,7 +47,6 @@ public class PersonController {
 	
 	@RequestMapping("/remove/{id}")
     public String removePerson(@PathVariable("id") int id){
-	    System.out.println("from removePerson() REMOTE and LOCAL");	
         this.personService.removePerson(id);
         return "redirect:/persons";
     }
