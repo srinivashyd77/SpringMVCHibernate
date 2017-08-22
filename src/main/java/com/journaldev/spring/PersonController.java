@@ -25,7 +25,7 @@ public class PersonController {
 	
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public String listPersons(Model model) {
-		System.out.println("from PersonController listPersons()");
+		System.out.println("from PersonController listPersons() new");
 		model.addAttribute("person", new Person());
 		model.addAttribute("listPersons", this.personService.listPersons());
 		return "person";
