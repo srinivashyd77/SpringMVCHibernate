@@ -49,7 +49,7 @@ public class PersonController {
 	
 	@RequestMapping("/remove/{id}")
     public String removePerson(@PathVariable("id") int id){
-		System.out.println("LOCAL");
+	    System.out.println("from removePerson() REMOTE and LOCAL");	
         this.personService.removePerson(id);
         return "redirect:/persons";
     }
