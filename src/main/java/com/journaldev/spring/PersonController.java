@@ -33,7 +33,7 @@ public class PersonController {
 	//For add and update person both
 	@RequestMapping(value= "/person/add", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute("person") Person p){
-		
+		System.out.println("from PersonController addPerson");
 		if(p.getId() == 0){
 			//new person, add it
 			this.personService.addPerson(p);
